@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandy Yang | Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #243247;
+      background: #f4f6fa;
+      line-height: 1.7;
+    }
+    header {
+      background: #182c49;
+      color: white;
+      padding: 65px 24px;
+      text-align: center;
+    }
+    h1 { margin: 0; font-size: 42px; }
+    header p { color: #d6e2f3; }
+    nav a {
+      color: white;
+      margin: 0 12px;
+    }
+    main { max-width: 900px; margin: auto; padding: 24px; }
+    section {
+      background: white;
+      padding: 28px;
+      margin: 24px 0;
+      border-radius: 12px;
+    }
+    h2 { color: #182c49; margin-top: 0; }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+    }
+    .skills li {
+      background: #eaf0f8;
+      padding: 8px 16px;
+      border-radius: 20px;
+    }
+    article + article {
+      border-top: 1px solid #e4e8ef;
+      margin-top: 24px;
+      padding-top: 12px;
+    }
+    a { color: #225ba5; }
+    footer { text-align: center; padding: 24px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sandy Yang</h1>
+    <p>Rutgers University | Finance &amp; Accounting</p>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>Personal Statement</h2>
+      <p>
+        I am a Finance and Accounting student at Rutgers University
+        interested in financial analysis and investment banking.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>Python fundamentals</li>
+        <li>HTML fundamentals</li>
+        <li>JavaScript fundamentals</li>
+        <li>Database design</li>
+        <li>Customer service</li>
+        <li>Team coordination</li>
+        <li>Social media marketing</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article>
+        <h3>Python Revenue and Profit Calculator</h3>
+        <p>
+          Created a course project with separate modules for revenue,
+          expenses, and profit calculations. Used input validation
+          and exception handling to manage incorrect entries.
+        </p>
+        <p><strong>Skills used:</strong> Python, modular programming,
+          exception handling.</p>
+      </article>
+
+      <article>
+        <h3>Database Design and Normalization</h3>
+        <p>
+          Completed a database assignment involving entity relationships,
+          primary and foreign keys, and functional dependencies.
+          Examined how normalization reduces repeated information.
+        </p>
+        <p><strong>Skills used:</strong> Database design, ER diagrams,
+          normalization.</p>
+      </article>
+
+      <article>
+        <h3>JavaScript Guessing Game</h3>
+        <p>
+          Built a guessing game as a programming exercise.
+          Used conditional logic to compare guesses and provide
+          feedback to the player.
+        </p>
+        <p><strong>Skills used:</strong> JavaScript, conditional logic,
+          user interaction.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/Sandy060318">My GitHub Profile</a>
+  </footer>
+</body>
+</html>
