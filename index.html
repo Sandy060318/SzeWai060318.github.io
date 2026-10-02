@@ -2,83 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Sze Wai Yang's portfolio: education, skills, work experience, and projects.">
   <title>Sze Wai Yang | Portfolio</title>
 
   <style>
+    :root {
+      --background: #f7f8fc;
+      --surface: #ffffff;
+      --text: #20283b;
+      --muted: #596579;
+      --accent: #4258cf;
+      --border: #e1e5ef;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 24px;
     }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: white;
-      color: #172033;
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.7;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 4px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
     }
 
     .container {
-      width: min(1100px, 90%);
-      margin: auto;
+      width: min(1080px, 90%);
+      margin: 0 auto;
     }
 
     header {
-      border-bottom: 1px solid #e8e9ee;
-    }
-
-    .navigation {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 22px 0;
-    }
-
-    .brand {
-      font-weight: bold;
-    }
-
-    .brand span {
-      color: #b52b37;
-      margin-right: 12px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
     }
 
     nav {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 22px;
+      gap: 16px;
+      padding: 20px 0;
     }
 
-    nav a {
-      color: #172033;
+    .brand {
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
       text-decoration: none;
       font-size: 14px;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    a:focus-visible {
-      outline: 3px solid #b52b37;
-      outline-offset: 5px;
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
     .hero {
-      background: #f7f8fb;
-    }
-
-    .hero-layout {
       display: grid;
       grid-template-columns: 260px 1fr;
-      gap: 70px;
+      gap: 60px;
       align-items: center;
-      padding: 80px 0;
+      padding: 72px 0;
     }
 
     .profile {
@@ -87,14 +100,14 @@
 
     .headshot {
       display: block;
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 22px;
-      border: 5px solid white;
-      border-radius: 50%;
+      width: 190px;
+      height: 190px;
+      margin: 0 auto 20px;
       object-fit: cover;
       object-position: center 40%;
-      box-shadow: 0 8px 24px #17203315;
+      border-radius: 50%;
+      border: 6px solid white;
+      box-shadow: 0 8px 30px rgba(32, 40, 59, 0.12);
     }
 
     .profile h2 {
@@ -102,135 +115,149 @@
       font-size: 25px;
     }
 
-    .school {
-      color: #a52b35;
-      margin: 5px 0;
+    .profile p {
+      margin: 6px 0;
+      color: var(--muted);
     }
 
-    .major {
-      color: #626a78;
-      font-size: 14px;
-      margin: 5px 0;
-    }
-
-    .badge {
+    .label {
       display: inline-block;
-      padding: 5px 13px;
-      background: #fce8e9;
-      color: #96313a;
-      border-radius: 20px;
-      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 30px;
+      background: #e9edff;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
     }
 
     h1 {
-      font-size: clamp(32px, 4vw, 46px);
+      font-size: clamp(34px, 5vw, 52px);
       line-height: 1.15;
-      letter-spacing: -1px;
+      letter-spacing: -1.5px;
       margin: 20px 0;
     }
 
     .intro {
-      color: #626a78;
-      font-size: 17px;
+      font-size: 18px;
+      color: var(--muted);
     }
 
     .button {
       display: inline-block;
-      margin-top: 16px;
-      padding: 11px 22px;
-      background: #172033;
+      background: var(--accent);
       color: white;
-      border-radius: 25px;
+      padding: 11px 20px;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 14px;
+      font-weight: 700;
+      margin-top: 10px;
     }
 
-    .content {
-      padding: 48px 0;
+    section {
+      padding: 35px 0;
     }
 
-    .content h2 {
+    .section-title {
       font-size: 28px;
+      margin: 0 0 18px;
+    }
+
+    .card {
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 5px;
+      font-size: 20px;
+    }
+
+    .subtitle {
+      color: var(--accent);
+      font-weight: 700;
       margin: 0 0 12px;
     }
 
-    .section-description {
-      color: #626a78;
+    .card p {
+      color: var(--muted);
     }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      list-style: none;
-      padding: 0;
+    .card ul {
+      padding-left: 22px;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .skill-group + .skill-group {
       margin-top: 24px;
     }
 
+    .skill-group h3 {
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+
+    .card .skills {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+    }
+
     .skills li {
-      background: #f0f2f7;
-      padding: 10px 24px;
-      border-radius: 24px;
-      font-weight: bold;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 28px;
-    }
-
-    article {
-      padding: 26px;
-      border: 1px solid #e5e7ee;
-      border-radius: 14px;
-      background: white;
-    }
-
-    article h3 {
-      font-size: 20px;
-      line-height: 1.4;
-    }
-
-    article p {
-      color: #626a78;
-      font-size: 15px;
-    }
-
-    .category {
-      color: #a52b35;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    footer {
-      border-top: 1px solid #e8e9ee;
-      padding: 25px;
-      text-align: center;
-      color: #626a78;
+      padding: 8px 15px;
+      background: #eef1ff;
+      color: #33449d;
+      border-radius: 8px;
       font-size: 14px;
     }
 
-    footer a {
-      color: #a52b35;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid .card {
+      margin-bottom: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
     }
 
     @media (max-width: 760px) {
-      .navigation {
-        flex-direction: column;
-      }
-
-      .hero-layout {
+      .hero {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 30px;
         padding: 45px 0;
       }
 
-      .projects {
+      .hero-content {
+        text-align: center;
+      }
+
+      .grid {
         grid-template-columns: 1fr;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 14px;
       }
     }
   </style>
@@ -238,134 +265,244 @@
 
 <body>
   <header>
-    <div class="container navigation">
-      <div class="brand">
-        <span>SY</span> Sze Wai's Portfolio
-      </div>
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="#about">Sze Wai Yang</a>
 
-      <nav aria-label="Main navigation">
+      <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-      </nav>
-    </div>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero" id="about">
-      <div class="container hero-layout">
-        <div class="profile">
-          <img
-            class="headshot"
-            src="headshot.jpg"
-            alt="Portrait of Sze Wai Yang"
-            width="180"
-            height="180"
-          >
+  <main class="container">
+    <section class="hero" id="about" aria-labelledby="intro-title">
+      <div class="profile">
+        <img
+          class="headshot"
+          src="headshot.jpg"
+          alt="Portrait of Sze Wai Yang"
+          width="190"
+          height="190"
+        >
+        <h2>Sze Wai Yang</h2>
+        <p>Rutgers University</p>
+        <p>Accounting &amp; Finance</p>
+      </div>
 
-          <h2>Sze Wai Yang</h2>
-          <p class="school">Rutgers Business School</p>
-          <p class="major">Finance &amp; Accounting</p>
+      <div class="hero-content">
+        <span class="label">Accounting &amp; Finance Student</span>
+
+        <h1 id="intro-title">
+          Building skills.<br>
+          Connecting business and technology.
+        </h1>
+
+        <p class="intro">
+          I am an Accounting and Finance student at Rutgers University
+          with experience in business operations, marketing, and customer
+          service, developing technical skills to support financial analysis.
+        </p>
+
+        <a class="button" href="#experience">Explore My Experience</a>
+      </div>
+    </section>
+
+    <section id="education" aria-labelledby="education-title">
+      <h2 class="section-title" id="education-title">Education</h2>
+
+      <div class="card">
+        <h3>Rutgers University</h3>
+        <p class="subtitle">New Brunswick, New Jersey</p>
+        <p>
+          Bachelor of Business Administration in Accounting and Finance<br>
+          Expected Graduation: May 2028
+        </p>
+        <p>
+          <strong>Relevant Coursework:</strong> Principles of Accounting
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Skills</h2>
+
+      <div class="card">
+        <div class="skill-group">
+          <h3>Technical Skills</h3>
+          <ul class="skills">
+            <li>HTML</li>
+            <li>JavaScript</li>
+            <li>Python — Basic Data Analysis</li>
+            <li>Excel — Pivot Tables, Formulas &amp; Charts</li>
+            <li>Microsoft Word</li>
+            <li>PowerPoint</li>
+            <li>Outlook</li>
+            <li>Canva</li>
+          </ul>
         </div>
 
-        <div>
-          <span class="badge">
-            Interested in Investment Banking
-          </span>
+        <div class="skill-group">
+          <h3>Professional Skills</h3>
+          <ul class="skills">
+            <li>Business Operations</li>
+            <li>Budgeting &amp; Financial Reporting</li>
+            <li>Social Media Marketing</li>
+            <li>Customer Service</li>
+            <li>Team Coordination</li>
+            <li>Performance Tracking</li>
+          </ul>
+        </div>
 
-          <h1>
-            Studying finance.<br>
-            Building practical skills.
-          </h1>
-
-          <p class="intro">
-            I am a Finance and Accounting student at Rutgers
-            University interested in financial analysis and
-            investment banking.
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <p>
+            English, Mandarin, and Cantonese;
+            conversational Japanese and Spanish.
           </p>
-
-          <p class="intro">
-            Through my coursework, I have learned HTML,
-            JavaScript, Excel, and Python. Below are some of
-            my class projects and the skills I have practiced.
-          </p>
-
-          <a class="button" href="#projects">
-            Explore My Projects
-          </a>
         </div>
       </div>
     </section>
 
-    <section class="container content" id="skills">
-      <h2>Skills</h2>
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title">Work Experience</h2>
 
-      <p class="section-description">
-        Tools and languages I have learned through coursework.
-      </p>
+      <article class="card">
+        <h3>Hashi Market</h3>
+        <p class="subtitle">
+          Shop Management, Marketing &amp; Social Media · Manhattan, NY
+        </p>
+        <ul>
+          <li>
+            Supervised ice cream shop operations, including employee
+            hiring, training, and scheduling.
+          </li>
+          <li>
+            Managed budgeting, cash flow, and financial reporting
+            to support efficient operations.
+          </li>
+          <li>
+            Developed marketing content and campaigns across social
+            media and other digital channels.
+          </li>
+          <li>
+            Tracked performance metrics to evaluate and refine campaigns.
+          </li>
+        </ul>
+      </article>
 
-      <ul class="skills">
-        <li>HTML</li>
-        <li>JavaScript</li>
-        <li>Excel</li>
-        <li>Python</li>
-      </ul>
+      <article class="card">
+        <h3>SageArk</h3>
+        <p class="subtitle">
+          Student Referral Representative · Wuxi, China
+        </p>
+        <ul>
+          <li>
+            Collaborated with Rutgers RCSSA on events promoting
+            transfer and job placement services.
+          </li>
+          <li>
+            Connected students with services through campus marketing
+            and peer outreach.
+          </li>
+          <li>
+            Promoted services on Redbook to reach a wider student audience.
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Gulp</h3>
+        <p class="subtitle">Lead Host · Long Island City, NY</p>
+        <ul>
+          <li>
+            Supported customer service and daily hosting operations
+            at the Long Island City location.
+          </li>
+          <li>
+            Promoted memberships and offers to encourage customer loyalty.
+          </li>
+          <li>
+            Tracked customer demographics and sales trends
+            to inform future promotions.
+          </li>
+        </ul>
+      </article>
     </section>
 
-    <section class="container content" id="projects">
-      <h2>My Projects</h2>
+    <section id="leadership" aria-labelledby="leadership-title">
+      <h2 class="section-title" id="leadership-title">
+        Campus Involvement
+      </h2>
 
-      <p class="section-description">
-        Selected coursework in programming and database design.
-      </p>
-
-      <div class="projects">
-        <article>
-          <span class="category">Python</span>
-          <h3>Revenue and Profit Calculator</h3>
-
+      <div class="grid">
+        <article class="card">
+          <h3>Association for Supply Chain Management</h3>
+          <p class="subtitle">Marketing Committee Member</p>
           <p>
-            A Python course project with separate modules for
-            revenue, expenses, and profit calculations.
-            Practiced input validation and exception handling.
+            Contribute to event budgeting, financial tracking,
+            planning, and logistics coordination.
           </p>
-
-          <!-- Insert a link to your actual project file here. -->
         </article>
 
-        <article>
-          <span class="category">Database Design</span>
-          <h3>Database Design and Normalization</h3>
-
+        <article class="card">
+          <h3>Rutgers Accounting Society</h3>
+          <p class="subtitle">Member</p>
           <p>
-            A course assignment exploring entity relationships,
-            primary and foreign keys, and functional dependencies.
-            Examined how normalization reduces repeated information.
+            Participate in workshops on financial reporting,
+            auditing, and Excel, and support career preparation
+            and networking activities.
           </p>
-
-          <!-- Insert a link to your actual project file here. -->
         </article>
 
-        <article>
-          <span class="category">JavaScript</span>
-          <h3>Guessing Game</h3>
-
+        <article class="card">
+          <h3>Rutgers Finance Society</h3>
+          <p class="subtitle">Member</p>
           <p>
-            A programming exercise using conditional logic to
-            compare guesses and provide feedback to the player.
+            Participate in finance learning and career development
+            activities, including financial modeling and data analysis.
           </p>
-
-          <!-- Insert a link to your actual project file here. -->
         </article>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Projects</h2>
+
+      <div class="card">
+        <h3>Portfolio Updates</h3>
+        <p>
+          I do not have completed projects to showcase yet.
+          I will add project descriptions and available code
+          or demo links as I complete them.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+
+      <div class="card">
+        <p>
+          Interested in connecting? You can find my code and
+          portfolio updates on GitHub.
+        </p>
+        <a
+          href="https://github.com/Sandy060318"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Visit My GitHub</a>
       </div>
     </section>
   </main>
 
   <footer>
-    Sze Wai Yang · Rutgers University ·
-    <a href="https://github.com/Sandy060318">
-      GitHub Profile
-    </a>
+    <div class="container">
+      © Sze Wai Yang · Personal Portfolio
+    </div>
   </footer>
 </body>
 </html>
